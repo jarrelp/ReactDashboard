@@ -21,7 +21,10 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
+    "& .Muibackdrop-root": {
+      display: "none"
+    }
   },
   drawerPaper: {
     width: drawerWidth
@@ -47,6 +50,7 @@ export default function ({ open, handleDrawerClose }) {
       classes={{
         paper: classes.drawerPaper
       }}
+      PaperProps={{ elevation: 9 }}
     >
       <div className={classes.drawerHeader}>
         <IconButton onClick={handleDrawerClose}>

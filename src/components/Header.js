@@ -16,8 +16,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     color: theme.palette.text.primary,
     [theme.breakpoints.up("sm")]: {
-      zIndex: theme.zIndex.drawer + 1
-    }
+      width: "100%"
+    },
+    zIndex: theme.zIndex.drawer + 1
   },
   rightIcons: {
     marginLeft: theme.spacing(0.5)
@@ -34,7 +35,7 @@ export default function Header({
 }) {
   const classes = useStyles();
   return (
-    <AppBar position="fixed" className={classes.appbar}>
+    <AppBar position="fixed" className={classes.appbar} style={{zIndex:1301}}>
       <Toolbar>
         <IconButton
           color="inherit"
