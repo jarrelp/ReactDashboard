@@ -30,7 +30,9 @@ const widgetNames = {
   a: "A",
   b: "B",
   c: "C",
-  d: "D"
+  d: "D",
+  e: "E",
+  f: "F"
 };
 export default function Widget({ id, onRemoveItem }) {
   const classes = useStyles();

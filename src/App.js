@@ -10,7 +10,7 @@ import "./styles.css";
 
 const drawerWidth = 240;
 
-const darkMode = "";
+const darkMode = "light";
 
 const theme = createTheme({
   palette: {

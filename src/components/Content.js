@@ -4,14 +4,17 @@ import { withSize } from "react-sizeme";
 import TopBar from "./TopBar";
 import Widget from "./Widget";
 
-const originalItems = ["a", "b", "c", "d"];
+const originalItems = ["a", "b", "c", "d", "e", "f"];
 
 const initialLayouts = {
   lg: [
     { i: "a", x: 0, y: 0, w: 1, h: 4 },
     { i: "b", x: 1, y: 0, w: 3, h: 4 },
     { i: "c", x: 4, y: 0, w: 1, h: 4 },
-    { i: "d", x: 0, y: 4, w: 2, h: 4 }
+    { i: "d", x: 0, y: 4, w: 2, h: 4 },
+    { i: "e", x: 0, y: 4, w: 2, h: 4 },
+    { i: "f", x: 0, y: 4, w: 2, h: 4 }
+
   ]
 };
 function Content({ size: { width } }) {
