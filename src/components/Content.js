@@ -13,11 +13,11 @@ const originalItems = ["a", "b", "c", "d", "e", "f"];
 const initialLayouts = {
   lg: [
     { w: 6, h: 6, x: 0, y: 0, i: "a", moved: false, static: false },
-    { w: 3, h: 6, x: 9, y: 0, i: "b", moved: false, static: false },
-    { w: 3, h: 6, x: 6, y: 0, i: "c", moved: false, static: false },
-    { w: 12, h: 4, x: 0, y: 6, i: "d", moved: false, static: false },
-    { w: 12, h: 4, x: 0, y: 6, i: "e", moved: false, static: false },
-    { w: 12, h: 4, x: 0, y: 6, i: "f", moved: false, static: false },
+    { w: 6, h: 6, x: 9, y: 0, i: "b", moved: false, static: false },
+    { w: 6, h: 6, x: 6, y: 0, i: "c", moved: false, static: false },
+    { w: 6, h: 6, x: 0, y: 6, i: "d", moved: false, static: false },
+    { w: 6, h: 6, x: 12, y: 6, i: "e", moved: false, static: false },
+    { w: 6, h: 6, x: 12, y: 12, i: "f", moved: false, static: false },
   ]
 };
 
@@ -26,8 +26,8 @@ const componentList = {
   b: AreaChart,
   c: BarChart,
   d: ScatterChart,
-  e: ScatterChart,
-  f: ScatterChart
+  e: LineChart,
+  f: BarChart
 };
 
 function Content({ size: { width } }) {
