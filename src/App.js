@@ -43,27 +43,11 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// export default function ToggleColorMode() {
-//   const [mode, setMode] = React.useState('light');
-//   const colorMode = React.useMemo(
-//     () => ({
-//       toggleColorMode: () => {
-//         setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
-//       },
-//     }),
-//     [],
-//   );
-
-// if mode: dark
-// then set darkMode variable to dark
-// else
-// then set darkMode variable to light
-
 function AppStructure() {
   const colorMode = React.useContext(ColorModeContext);
   const classes = useStyles();
   const [open, setOpen] = useState(true);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const handleDrawerToggle = () => { setOpen(!open); };
   const handleDrawerClose = () => { setOpen(false); };
