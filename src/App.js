@@ -13,14 +13,6 @@ const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 const drawerWidth = 240;
 
-const darkMode = 'light';
-
-const theme = createTheme({
-  palette: {
-    mode: darkMode ? 'dark' : 'light'
-  }
-});
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex"
@@ -76,15 +68,13 @@ function AppStructure() {
   const handleDrawerToggle = () => { setOpen(!open); };
   const handleDrawerClose = () => { setOpen(false); };
   const toggleDarkMode = () => { setDarkMode(!darkMode); };
-
-  //schrijf hier verder ifstatement darkmode
   
   return (
       <div className={classes.root}>
         <CssBaseline />
         <Header
           handleDrawerToggle={handleDrawerToggle}
-          toggleDarkMode={toggleDarkMode}
+          toggleDarkMode={() => { colorMode.toggleColorMode(); toggleDarkMode(); }}
           darkMode={darkMode}
         />
         <Sidebar 
@@ -104,9 +94,30 @@ function AppStructure() {
 }
 
 export default function App() {
+  const [mode, setMode] = React.useState('light');
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  );
   return (
-    <ThemeProvider theme={theme}>
-      <AppStructure />
-    </ThemeProvider>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <AppStructure />
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
