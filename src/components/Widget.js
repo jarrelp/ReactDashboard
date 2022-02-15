@@ -27,14 +27,14 @@ const useStyles = makeStyles({
 });
 
 const widgetNames = {
-  a: "A",
-  b: "B",
-  c: "C",
-  d: "D",
-  e: "E",
-  f: "F"
+  a: 'Line Chart',
+  b: 'Area Chart',
+  c: 'Bar Chart',
+  d: 'Scatter Chart',
+  e: 'Scatter Chart',
+  f: 'Scatter Chart'
 };
-export default function Widget({ id, onRemoveItem }) {
+export default function Widget({ id, onRemoveItem, component: Item }) {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
@@ -47,7 +47,9 @@ export default function Widget({ id, onRemoveItem }) {
           <CloseIcon fontSize="small" />
         </IconButton>
       </div>
-      <div className={classes.body} />
+      <div className={classes.body}>
+        <Item />
+      </div>
     </Card>
   );
 }

@@ -3,20 +3,33 @@ import { Responsive as ResponsiveGridLayout } from "react-grid-layout";
 import { withSize } from "react-sizeme";
 import TopBar from "./TopBar";
 import Widget from "./Widget";
+import LineChart from "./customcharts/LineChart";
+import AreaChart from "./customcharts/AreaChart";
+import BarChart from "./customcharts/BarChart";
+import ScatterChart from "./customcharts/ScatterChart";
 
 const originalItems = ["a", "b", "c", "d", "e", "f"];
 
 const initialLayouts = {
   lg: [
-    { i: "a", x: 0, y: 0, w: 1, h: 4 },
-    { i: "b", x: 1, y: 0, w: 3, h: 4 },
-    { i: "c", x: 4, y: 0, w: 1, h: 4 },
-    { i: "d", x: 0, y: 4, w: 2, h: 4 },
-    { i: "e", x: 0, y: 4, w: 2, h: 4 },
-    { i: "f", x: 0, y: 4, w: 2, h: 4 }
-
+    { w: 6, h: 6, x: 0, y: 0, i: "a", moved: false, static: false },
+    { w: 3, h: 6, x: 9, y: 0, i: "b", moved: false, static: false },
+    { w: 3, h: 6, x: 6, y: 0, i: "c", moved: false, static: false },
+    { w: 12, h: 4, x: 0, y: 6, i: "d", moved: false, static: false },
+    { w: 12, h: 4, x: 0, y: 6, i: "e", moved: false, static: false },
+    { w: 12, h: 4, x: 0, y: 6, i: "f", moved: false, static: false },
   ]
 };
+
+const componentList = {
+  a: LineChart,
+  b: AreaChart,
+  c: BarChart,
+  d: ScatterChart,
+  e: ScatterChart,
+  f: ScatterChart
+};
+
 function Content({ size: { width } }) {
   const [items, setItems] = useState(originalItems);
   const [layouts, setLayouts] = useState(
@@ -62,7 +75,7 @@ function Content({ size: { width } }) {
             <Widget
               id={key}
               onRemoveItem={onRemoveItem}
-              backgroundColor="#867ae9"
+              component={componentList[key]}
             />
           </div>
         ))}

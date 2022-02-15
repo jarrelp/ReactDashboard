@@ -16,12 +16,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const widgetNames = {
-  a: "A",
-  b: "B",
-  c: "C",
-  d: "D",
-  e: "E",
-  f: "F"
+  a: "Line Chart",
+  b: "Area Chart",
+  c: "Bar Chart",
+  d: "Scatter Chart",
+  e: "Scatter Chart",
+  f: "Scatter Chart"
 };
 
 export default function AddList({
