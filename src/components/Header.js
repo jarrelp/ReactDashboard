@@ -46,7 +46,7 @@ export default function Header({
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-          Medium
+          Groen Agro Control
         </Typography>
         <div className={classes.spacer} />
         <IconButton
