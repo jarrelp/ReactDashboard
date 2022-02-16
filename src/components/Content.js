@@ -13,11 +13,11 @@ const originalItems = ["a", "b", "c", "d", "e", "f"];
 const initialLayouts = {
   lg: [
     { w: 6, h: 6, x: 0, y: 0, i: "a", moved: false, static: false },
-    { w: 6, h: 6, x: 9, y: 0, i: "b", moved: false, static: false },
-    { w: 6, h: 6, x: 6, y: 0, i: "c", moved: false, static: false },
-    { w: 6, h: 6, x: 0, y: 6, i: "d", moved: false, static: false },
-    { w: 6, h: 6, x: 12, y: 6, i: "e", moved: false, static: false },
-    { w: 6, h: 6, x: 12, y: 12, i: "f", moved: false, static: false },
+    { w: 6, h: 6, x: 6, y: 0, i: "b", moved: false, static: false },
+    { w: 6, h: 6, x: 6, y: 6, i: "c", moved: false, static: false },
+    { w: 6, h: 6, x: 12, y: 6, i: "d", moved: false, static: false },
+    { w: 6, h: 6, x: 12, y: 12, i: "e", moved: false, static: false },
+    { w: 6, h: 6, x: 18, y: 12, i: "f", moved: false, static: false },
   ]
 };
 
