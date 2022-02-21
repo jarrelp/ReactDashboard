@@ -20,8 +20,8 @@ const widgetNames = {
   b: "Area Chart",
   c: "Bar Chart",
   d: "Scatter Chart",
-  e: "Scatter Chart",
-  f: "Scatter Chart"
+  e: "Line Chart",
+  f: "Bar Chart"
 };
 
 export default function AddList({
