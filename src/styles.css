@@ -30,7 +30,7 @@
 
 .react-grid-item.react-grid-placeholder {
   background: #5cbc63;
-  opacity: 0.2; 
+  opacity: 0.2;
   border-radius: 12px;
   transition-duration: 100ms;
   z-index: 2;
@@ -135,7 +135,6 @@
   bottom: 0;
   right: 0;
   cursor: se-resize;
-  
 }
 .react-resizable-handle-nw {
   top: 0;
@@ -183,16 +182,4 @@
   height: 300px;
   border-radius: 0 0 300px 0px;
   background-color: rgba(196, 196, 196, 1);
-}
-
-.iets {
-  width: 20px;
-  height: 20px;
-  border:20px solid black;
-  border-top-color:black; 
-  border-right-color:black;
-  border:40px solid transparent;
-  border-radius: 50%;
-  transform:rotate(90deg);
-  border-radius: 12;
 }
