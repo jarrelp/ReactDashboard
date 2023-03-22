@@ -1,28 +1,27 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import { makeStyles } from "@mui/styles";
+import { useTheme } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import SaveIcon from "@mui/icons-material/Save";
 import AddList from "./AddList";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(1),
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-end"
-  }
-}));
 export default function TopBar({
   onLayoutSave,
   items,
   onRemoveItem,
   onAddItem,
-  originalItems
+  originalItems,
 }) {
-  const classes = useStyles();
+  const theme = useTheme();
   return (
-    <Card className={classes.root}>
+    <Card
+      sx={{
+        padding: theme.spacing(1),
+        width: "100%",
+        display: "flex",
+        justifyContent: "flex-end",
+      }}
+    >
       <AddList
         items={items}
         onRemoveItem={onRemoveItem}

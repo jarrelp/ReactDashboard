@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@mui/styles";
 import Popover from "@mui/material/Popover";
 import FormLabel from "@mui/material/FormLabel";
 import FormControl from "@mui/material/FormControl";
@@ -9,28 +8,21 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
-const useStyles = makeStyles((theme) => ({
-  popup: {
-    padding: theme.spacing(2)
-  }
-}));
-
 const widgetNames = {
   a: "Line Chart",
   b: "Area Chart",
   c: "Bar Chart",
   d: "Scatter Chart",
   e: "Line Chart",
-  f: "Bar Chart"
+  f: "Bar Chart",
 };
 
 export default function AddList({
   items,
   onRemoveItem,
   onAddItem,
-  originalItems
+  originalItems,
 }) {
-  const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -64,33 +56,31 @@ export default function AddList({
         onClose={handleClose}
         anchorOrigin={{
           vertical: "bottom",
-          horizontal: "center"
+          horizontal: "center",
         }}
         transformOrigin={{
           vertical: "top",
-          horizontal: "center"
+          horizontal: "center",
         }}
       >
-        <div className={classes.popup}>
-          <FormControl component="fieldset">
-            <FormLabel component="legend">Select Widgets</FormLabel>
-            <FormGroup>
-              {originalItems.map((i) => (
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={items.includes(i)}
-                      onChange={handleChange}
-                      name={i}
-                    />
-                  }
-                  label={widgetNames[i]}
-                  key={i}
-                />
-              ))}
-            </FormGroup>
-          </FormControl>
-        </div>
+        <FormControl component="fieldset">
+          <FormLabel component="legend">Select Widgets</FormLabel>
+          <FormGroup>
+            {originalItems.map((i) => (
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={items.includes(i)}
+                    onChange={handleChange}
+                    name={i}
+                  />
+                }
+                label={widgetNames[i]}
+                key={i}
+              />
+            ))}
+          </FormGroup>
+        </FormControl>
       </Popover>
     </>
   );

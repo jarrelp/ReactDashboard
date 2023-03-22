@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Responsive as ResponsiveGridLayout } from "react-grid-layout";
-import { withSize } from "react-sizeme";
+import { withResizeDetector } from "react-resize-detector";
 import TopBar from "./TopBar";
 import Widget from "./Widget";
 import LineChart from "./customcharts/LineChart";
@@ -18,7 +18,7 @@ const initialLayouts = {
     { w: 6, h: 6, x: 12, y: 6, i: "d", moved: false, static: false },
     { w: 6, h: 6, x: 12, y: 12, i: "e", moved: false, static: false },
     { w: 6, h: 6, x: 18, y: 12, i: "f", moved: false, static: false },
-  ]
+  ],
 };
 
 const componentList = {
@@ -27,7 +27,7 @@ const componentList = {
   c: BarChart,
   d: ScatterChart,
   e: LineChart,
-  f: BarChart
+  f: BarChart,
 };
 
 function Content({ size: { width } }) {
@@ -84,7 +84,9 @@ function Content({ size: { width } }) {
   );
 }
 
-export default withSize({ refreshMode: "debounce", refreshRate: 60 })(Content);
+export default withResizeDetector({ refreshMode: "debounce", refreshRate: 60 })(
+  Content
+);
 
 function getFromLS(key) {
   let ls = {};
@@ -101,7 +103,7 @@ function saveToLS(key, value) {
     global.localStorage.setItem(
       "rgl-8",
       JSON.stringify({
-        [key]: value
+        [key]: value,
       })
     );
   }
